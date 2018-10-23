@@ -20,7 +20,7 @@ namespace _Menu_
             //Menu Items
             string[] menuItems =
             {
-                "Exit menu                    ",//This string should always be the first in the array
+                "Exit menu                      ",//This string should always be the first in the array
                 "Something				        ",
                 "Something else					"
             };
@@ -90,7 +90,8 @@ namespace _Menu_
 
                         case 1:
                             Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
-
+                            
+                            // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
@@ -99,6 +100,7 @@ namespace _Menu_
                         case 2:
                             Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
 
+                            // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
