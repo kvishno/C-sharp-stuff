@@ -12,7 +12,7 @@ namespace _Menu_
         {
             //Header
             /*
-            Console.WriteLine("Insert something here");
+            Console.WriteLine("***Insert something here***");
             Console.WriteLine("Vishno - 2018");
             Console.WriteLine();
             */
