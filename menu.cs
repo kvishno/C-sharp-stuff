@@ -104,30 +104,6 @@ namespace _Menu_
                             Console.ReadKey();
                             Console.Clear();
                             break;
-                        case 3:
-                            Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
-
-
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
-                        case 4:
-                            Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
-
-
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
-                        case 5:
-                            Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
-
-
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
                         default:
                             Console.WriteLine("\n" + wrongNum);
                             Console.WriteLine("-----------------------------------\n");
