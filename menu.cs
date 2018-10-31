@@ -20,9 +20,9 @@ namespace _Menu_
             //Menu Items
             string[] menuItems =
             {
-                "Exit menu                      ",//This string should always be the first in the array
-                "Something				        ",
-                "Something else					"
+                "Exit menu",//This string should always be the first in the array
+                "Something",
+                "Something else"
             };
 
             string pickText = "Pick an option (number):";
