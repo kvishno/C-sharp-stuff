@@ -10,13 +10,6 @@ namespace _Menu_
     {
         static void Main(string[] args)
         {
-            //Header
-            /*
-            Console.WriteLine("***Insert something here***");
-            Console.WriteLine("Vishno - 2018");
-            Console.WriteLine();
-            */
-
             //Menu Items
             string[] menuItems =
             {
@@ -24,16 +17,15 @@ namespace _Menu_
                 "Something",
                 "Something else"
             };
-
-            string pickText = "Pick an option (number):";
-
+            
             //Text strings
+            string pickText = "Pick an option (number):";
             string wrongNum = "Wrong number. Pick again.";
-            string onlyWholeNum = "Inset only whole numbers!";
+            string onlyWholeNum = "Insert only whole numbers!";
             string backToMenu = "\nPress any key to return to the menu";
 
             //Loop Menu
-            bool exitMenu = true;
+            bool exitMenu = false;
             do
             {
                 //Print menu
@@ -74,7 +66,7 @@ namespace _Menu_
                             System.Threading.Thread.Sleep(1000);
 
                             Console.WriteLine("0");
-                            exitMenu = false; //Change bool to exit menu
+                            exitMenu = true; //Change bool to exit menu
                             break;
 
                         case 1:                            
@@ -102,7 +94,7 @@ namespace _Menu_
                     Console.WriteLine("\n" + onlyWholeNum);
                     Console.WriteLine("-----------------------------------\n");
                 }
-            } while (exitMenu);
+            } while (exitMenu == false);
         }
     }
 }
