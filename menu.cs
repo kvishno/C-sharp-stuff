@@ -40,12 +40,9 @@ namespace _Menu_
                     }
                     Console.WriteLine("---------------------------------");
                 }
-
-                //Pick menu answer
-                var ans = Console.ReadLine();
-
-                //Clear console after choosing and item
-                Console.Clear();
+                
+                var ans = Console.ReadLine(); //Pick menu answer
+                Console.Clear(); //Clear console after choosing and item
 
                 int choice = 0;
                 if (int.TryParse(ans, out choice))
