@@ -44,7 +44,7 @@ namespace _Menu_
                     foreach (string value in menuItems)
                     {
                         i = i + 1;
-                        Console.WriteLine(i + ". " + value");
+                        Console.WriteLine(i + ". " + value);
                     }
                     Console.WriteLine("---------------------------------");
                 }
