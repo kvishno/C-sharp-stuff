@@ -40,11 +40,11 @@ namespace _Menu_
                 Console.WriteLine(pickText);
                 {
                     Console.WriteLine("---------------------------------");
-                    int i = -1;
+                    int i = 0;
                     foreach (string value in menuItems)
                     {
-                        i = i + 1;
                         Console.WriteLine(i + ". " + value);
+                        i = i + 1;
                     }
                     Console.WriteLine("---------------------------------");
                 }
@@ -74,8 +74,7 @@ namespace _Menu_
                             System.Threading.Thread.Sleep(1000);
 
                             Console.WriteLine("0");
-                            //Change bool to exit menu
-                            exitMenu = false;
+                            exitMenu = false; //Change bool to exit menu
                             break;
 
                         case 1:                            
@@ -86,7 +85,6 @@ namespace _Menu_
                             Console.Clear();
                             break;
                         case 2:
-
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
