@@ -84,15 +84,13 @@ namespace _Menu_
                             Console.Clear();
                             break;
                         default:
-                            Console.WriteLine("\n" + wrongNum);
-                            Console.WriteLine("-----------------------------------\n");
+                            Console.WriteLine(wrongNum);
                             break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n" + onlyWholeNum);
-                    Console.WriteLine("-----------------------------------\n");
+                    Console.WriteLine(onlyWholeNum);
                 }
             } while (exitMenu == false);
         }
