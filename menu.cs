@@ -27,15 +27,6 @@ namespace _Menu_
 
             string pickText = "Pick an option (number):";
 
-
-            //Text displayed when choosing an case
-            string[] caseText =
-            {
-                "Exiting in:", //This string should always be the first in the array
-                "You picked 1 - ",
-                "You picked 2 - "
-            };
-
             //Text strings
             string wrongNum = "Wrong number. Pick again.";
             string onlyWholeNum = "Inset only whole numbers!";
@@ -45,7 +36,7 @@ namespace _Menu_
             bool exitMenu = true;
             do
             {
-                //Menu
+                //Print menu
                 Console.WriteLine(pickText);
                 {
                     Console.WriteLine("---------------------------------");
@@ -53,26 +44,25 @@ namespace _Menu_
                     foreach (string value in menuItems)
                     {
                         i = i + 1;
-                        Console.WriteLine("|" + i + ". " + value + "\t|");
+                        Console.WriteLine(i + ". " + value");
                     }
                     Console.WriteLine("---------------------------------");
                 }
 
                 //Pick menu answer
-                var ansA = Console.ReadLine();
+                var ans = Console.ReadLine();
 
                 //Clear console after choosing and item
                 Console.Clear();
 
-                int choiceA = 0;
-                if (int.TryParse(ansA, out choiceA))
+                int choice = 0;
+                if (int.TryParse(ans, out choice))
                 {
-                    int choiceANum = choiceA;
-                    switch (choiceA)
+                    switch (choice)
                     {
                         //Cases in switch
                         case 0: //Exit application
-                            Console.WriteLine(caseText[choiceANum]);
+                            Console.WriteLine("Exiting in:");
 
                             Console.WriteLine("3...");
                             System.Threading.Thread.Sleep(1000);
@@ -88,9 +78,7 @@ namespace _Menu_
                             exitMenu = false;
                             break;
 
-                        case 1:
-                            Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
-                            
+                        case 1:                            
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
@@ -98,7 +86,6 @@ namespace _Menu_
                             Console.Clear();
                             break;
                         case 2:
-                            Console.WriteLine(caseText[choiceANum] + menuItems[choiceANum]);
 
                             // YOUR CODE HERE
 
@@ -118,7 +105,6 @@ namespace _Menu_
                     Console.WriteLine("-----------------------------------\n");
                 }
             } while (exitMenu);
-
         }
     }
 }
