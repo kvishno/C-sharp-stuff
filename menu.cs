@@ -30,9 +30,7 @@ namespace _Menu_
             bool exitMenu = false; //do-while loop (the menu) runs until set to true
             
             do
-            {
-                Console.Clear(); //Clear console before printing menu
-                
+            {                               
                 //Print menu 
                 Console.WriteLine(selectText);
                 {
@@ -76,12 +74,14 @@ namespace _Menu_
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
+                            Console.Clear();
                             break;
                         case 2:
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
+                            Console.Clear();
                             break;
                         default:
                             Console.WriteLine(wrongNum);
