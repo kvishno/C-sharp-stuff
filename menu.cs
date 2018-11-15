@@ -21,17 +21,20 @@ namespace _Menu_
             };
             
             //Text strings
-            string pickText = "Pick an option (number):";
-            string wrongNum = "Wrong number. Pick again.";
+            string selectText = "Select an option (number):";
+            string wrongNum = "Wrong number. Select again.";
             string onlyWholeNum = "Insert only whole numbers!";
             string backToMenu = "\nPress any key to return to the menu";
 
             //Loop Menu
-            bool exitMenu = false;
+            bool exitMenu = false; //do-while loop (the menu) runs until set to true
+            
             do
             {
-                //Print menu
-                Console.WriteLine(pickText);
+                Console.Clear(); //Clear console before printing menu
+                
+                //Print menu 
+                Console.WriteLine(selectText);
                 {
                     Console.WriteLine("---------------------------------");
                     int i = 0;
@@ -43,7 +46,7 @@ namespace _Menu_
                     Console.WriteLine("---------------------------------");
                 }
                 
-                var ans = Console.ReadLine(); //Pick menu answer
+                var ans = Console.ReadLine(); //Select menu answer
                 Console.Clear(); //Clear console after choosing and item
 
                 int choice = 0;
@@ -65,7 +68,7 @@ namespace _Menu_
                             System.Threading.Thread.Sleep(1000);
 
                             Console.WriteLine("0");
-                            exitMenu = true; //Change bool to exit menu
+                            exitMenu = true; //Changes bool to exit menu
                             break;
 
                         case 1:                            
@@ -73,14 +76,12 @@ namespace _Menu_
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
-                            Console.Clear();
                             break;
                         case 2:
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
                             Console.ReadKey();
-                            Console.Clear();
                             break;
                         default:
                             Console.WriteLine(wrongNum);
