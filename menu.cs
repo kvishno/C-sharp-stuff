@@ -46,7 +46,7 @@ namespace _Menu_
                 }
 
                 var ans = Console.ReadLine(); //Select menu answer
-                Console.Clear(); //Clear console after choosing and item
+                Console.Clear(); //Clear console after choosing an item
 
                 int choice = 0;
                 if (int.TryParse(ans, out choice))
