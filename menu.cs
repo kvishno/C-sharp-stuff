@@ -17,33 +17,34 @@ namespace _Menu_
             {
                 "Exit menu",//This string should always be the first in the array
                 "Something",
-                "Something else"
+                "Something else",
+                "Third"
             };
-            
+
             //Text strings
             string selectText = "Select an option (number):";
-            string wrongNum = "Wrong number. Select again.";
-            string onlyWholeNum = "Insert only whole numbers!";
+            string wrongNum = "Wrong number. Select again.\n";
+            string onlyWholeNum = "Insert only whole numbers!\n";
             string backToMenu = "\nPress any key to return to the menu";
 
             //Loop Menu
             bool exitMenu = false; //do-while loop (the menu) runs until set to true
-            
+
             do
-            {                               
+            {
                 //Print menu 
                 Console.WriteLine(selectText);
                 {
                     Console.WriteLine("---------------------------------");
                     int i = 0;
-                    foreach (string value in menuItems)
+                    foreach (string title in menuItems)
                     {
-                        Console.WriteLine(i + ". " + value);
-                        i = i + 1;
+                        Console.WriteLine(i + ". " + title);
+                        i += 1;
                     }
                     Console.WriteLine("---------------------------------");
                 }
-                
+
                 var ans = Console.ReadLine(); //Select menu answer
                 Console.Clear(); //Clear console after choosing and item
 
@@ -69,7 +70,7 @@ namespace _Menu_
                             exitMenu = true; //Changes bool to exit menu
                             break;
 
-                        case 1:                            
+                        case 1:
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
@@ -77,6 +78,13 @@ namespace _Menu_
                             Console.Clear();
                             break;
                         case 2:
+                            // YOUR CODE HERE
+
+                            Console.WriteLine(backToMenu);
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        case 3:
                             // YOUR CODE HERE
 
                             Console.WriteLine(backToMenu);
