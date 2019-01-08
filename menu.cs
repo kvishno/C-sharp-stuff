@@ -85,6 +85,7 @@ namespace Test
                 }
             } while (exitMenu == false);
         }
+        
         private static void EndCase()
         {
             string backToMenuString = "\nPress any key to return to the menu";
