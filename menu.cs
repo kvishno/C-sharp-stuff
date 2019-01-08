@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 //-------------A simple C# menu-------------
 
-namespace _Menu_
+namespace Test
 {
     class Program
     {
@@ -17,15 +14,13 @@ namespace _Menu_
             {
                 "Exit menu",//This string should always be the first in the array
                 "Something",
-                "Something else",
-                "Third"
+                "Something else"
             };
 
             //Text strings
-            string selectText = "Select an option (number):";
-            string wrongNum = "Wrong number. Select again.\n";
-            string onlyWholeNum = "Insert only whole numbers!\n";
-            string backToMenu = "\nPress any key to return to the menu";
+            string selectOptionString = "Select an option (number):";
+            string wrongNumberString = "Wrong number. Select again.\n";
+            string onlyIntString = "Insert only whole numbers!\n";
 
             //Loop Menu
             bool exitMenu = false; //do-while loop (the menu) runs until set to true
@@ -33,7 +28,7 @@ namespace _Menu_
             do
             {
                 //Print menu 
-                Console.WriteLine(selectText);
+                Console.WriteLine(selectOptionString);
                 {
                     Console.WriteLine("---------------------------------");
                     int i = 0;
@@ -69,38 +64,34 @@ namespace _Menu_
                             Console.WriteLine("0");
                             exitMenu = true; //Changes bool to exit menu
                             break;
-
                         case 1:
                             // YOUR CODE HERE
 
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
+                            EndCase();
                             break;
                         case 2:
                             // YOUR CODE HERE
 
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
-                        case 3:
-                            // YOUR CODE HERE
-
-                            Console.WriteLine(backToMenu);
-                            Console.ReadKey();
-                            Console.Clear();
+                            EndCase();
                             break;
                         default:
-                            Console.WriteLine(wrongNum);
+                            Console.WriteLine(wrongNumberString);
                             break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine(onlyWholeNum);
+                    Console.WriteLine(onlyIntString);
                 }
             } while (exitMenu == false);
+        }
+        private static void EndCase()
+        {
+            string backToMenuString = "\nPress any key to return to the menu";
+
+            Console.WriteLine(backToMenuString);
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
