@@ -16,7 +16,6 @@ sudo ufw allow 21/tcp
 sudo ufw allow 990/tcp
 sudo ufw allow 40000:50000/tcp
 
-
 #Install vsftpd
 sudo apt-get update
 sudo apt-get install vsftpd -y
@@ -36,12 +35,13 @@ echo "$USER:$password" | sudo chpasswd
 sudo mkdir /home/$USER/ftp
 sudo chown nobody:nogroup /home/$USER/ftp
 sudo chmod a-w /home/$USER/ftp
-#Create file filder
+
+#Create file folder
 sudo mkdir /home/$USER/ftp/files
 sudo chown $USER:$USER /home/$USER/ftp/files
 
 #Add test file
-#echo "vsftpd test file" | sudo tee /home/$USER/ftp/files/test.txt
+#echo "Sometext" | sudo tee /home/$USER/ftp/files/test.txt
 
 #Add user to FTP userlist
 echo "$USER" | sudo tee -a /etc/vsftpd.userlist
@@ -65,7 +65,6 @@ sudo grep -qxF 'userlist_deny=NO' /etc/vsftpd.conf || echo 'userlist_deny=NO' | 
 
 
 #Securing FTP server
-
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 
 sudo sed -i 's/.*rsa_cert_file.*/rsa_cert_file=\/etc\/ssl\/private\/vsftpd.pem/' /etc/vsftpd.conf
