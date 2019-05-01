@@ -10,6 +10,13 @@ organizationalunit=IT
 email=administrator@ZBCLINUX.dk
 commonname=ZBCLINUX.dk
 
+#Create firewall rules
+sudo ufw allow 20/tcp
+sudo ufw allow 21/tcp
+sudo ufw allow 990/tcp
+sudo ufw allow 40000:50000/tcp
+
+
 #Install vsftpd
 sudo apt-get update
 sudo apt-get install vsftpd -y
