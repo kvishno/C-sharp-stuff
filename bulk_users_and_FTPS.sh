@@ -46,7 +46,6 @@ sudo chown $USER:$USER /home/$USER/ftp/files
 #Add user to FTP userlist
 echo "$USER" | sudo tee -a /etc/vsftpd.userlist
 
-
 echo -------------------------
 done
 
@@ -63,7 +62,6 @@ sudo grep -qxF 'userlist_enable=YES' /etc/vsftpd.conf || echo 'userlist_enable=Y
 sudo grep -qxF 'userlist_file=/etc/vsftpd.userlist' /etc/vsftpd.conf || echo 'userlist_file=/etc/vsftpd.userlist' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'userlist_deny=NO' /etc/vsftpd.conf || echo 'userlist_deny=NO' | sudo tee -a /etc/vsftpd.conf
 
-
 #Securing FTP server
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 
@@ -74,11 +72,9 @@ sudo sed -i 's/.*ssl_enable.*/ssl_enable=YES/' /etc/vsftpd.conf
 sudo grep -qxF 'allow_anon_ssl=NO' /etc/vsftpd.conf || echo 'allow_anon_ssl=NO' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'force_local_data_ssl=YES' /etc/vsftpd.conf || echo 'force_local_data_ssl=YES' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'force_local_logins_ssl=YES' /etc/vsftpd.conf || echo 'force_local_logins_ssl=YES' | sudo tee -a /etc/vsftpd.conf
-
 sudo grep -qxF 'ssl_tlsv1=YES' /etc/vsftpd.conf || echo 'ssl_tlsv1=YES' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'ssl_sslv2=NO' /etc/vsftpd.conf || echo 'ssl_sslv2=NO' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'ssl_sslv3=NO' /etc/vsftpd.conf || echo 'ssl_sslv3=NO' | sudo tee -a /etc/vsftpd.conf
-
 sudo grep -qxF 'require_ssl_reuse=NO' /etc/vsftpd.conf || echo 'require_ssl_reuse=NO' | sudo tee -a /etc/vsftpd.conf
 sudo grep -qxF 'ssl_ciphers=HIGH' /etc/vsftpd.conf || echo 'ssl_ciphers=HIGH' | sudo tee -a /etc/vsftpd.conf
 
