@@ -1,14 +1,16 @@
 #!/bin/bash
-password=Password!
+#Creating test users with FTP
+
+password=SOMEPASSWORD!
 
 #Company details
 country=DK
-state=Zealand
-locality=Ringsted
-organization=ZBCLINUX.dk
+state=State
+locality=City
+organization=example.com
 organizationalunit=IT
-email=administrator@ZBCLINUX.dk
-commonname=ZBCLINUX.dk
+email=admin@example.com
+commonname=example.com
 
 #Create firewall rules
 sudo ufw allow 20/tcp
@@ -25,7 +27,6 @@ for USER in $(cat userlist.txt)
 do
 
 #Create new user
-echo -------------------------
 echo Creating new user: $USER
 echo Setting password $password
 sudo adduser $USER --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
@@ -40,13 +41,9 @@ sudo chmod a-w /home/$USER/ftp
 sudo mkdir /home/$USER/ftp/files
 sudo chown $USER:$USER /home/$USER/ftp/files
 
-#Add test file
-#echo "Sometext" | sudo tee /home/$USER/ftp/files/test.txt
-
 #Add user to FTP userlist
 echo "$USER" | sudo tee -a /etc/vsftpd.userlist
 
-echo -------------------------
 done
 
 #Configuring FTP Access
