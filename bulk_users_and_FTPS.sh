@@ -1,9 +1,10 @@
 #!/bin/bash
 #Creating test users with FTP
 
+#Password to set for the users
 password=SOMEPASSWORD!
 
-#Company details
+#Info to create cert
 country=DK
 state=State
 locality=City
