@@ -1,7 +1,7 @@
 #!/bin/bash
 #Creating test users with FTP
 
-#Password to set for the users
+#Password to set for the new users
 password=SOMEPASSWORD!
 
 #Info to create cert
@@ -24,6 +24,7 @@ sudo apt-get update
 sudo apt-get install vsftpd -y
 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
 
+#Reads userlist.txt - userlist.txt should contain the new usernames separated by newline
 for USER in $(cat userlist.txt)
 do
 
