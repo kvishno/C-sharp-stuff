@@ -17,18 +17,13 @@ namespace Test
                 "Something else"
             };
 
-            //Text strings
-            string selectOptionString = "Select an option (number):";
-            string wrongNumberString = "Wrong number. Select again.\n";
-            string onlyIntString = "Insert only whole numbers!\n";
-
             //Loop Menu
             bool exitMenu = false; //do-while loop (the menu) runs until set to true
 
             do
             {
                 //Print menu 
-                Console.WriteLine(selectOptionString);
+                Console.WriteLine("Select an option (number):");
                 {
                     Console.WriteLine("---------------------------------");
                     int i = 0;
@@ -75,22 +70,20 @@ namespace Test
                             EndCase();
                             break;
                         default:
-                            Console.WriteLine(wrongNumberString);
+                            Console.WriteLine("Wrong number. Select again.\n");
                             break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine(onlyIntString);
+                    Console.WriteLine("Insert only whole numbers!\n");
                 }
             } while (exitMenu == false);
         }
         
         private static void EndCase()
         {
-            string backToMenuString = "\nPress any key to return to the menu";
-
-            Console.WriteLine(backToMenuString);
+            Console.WriteLine("\nPress any key to return to the menu");
             Console.ReadKey();
             Console.Clear();
         }
